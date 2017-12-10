@@ -31,6 +31,13 @@ module.exports = (sequelize, DataTypes) => {
             if (keyWordsValue !== 1) {
               throw new Error('The sum of the Key words value, must be 1.');
             }
+          },
+          correctKeyWordValue(value) {
+            if (!value) return;
+            const keyWordsValue = Object.keys(value).map(key => value[key]);
+            if (keyWordsValue.indexOf(0) !== -1) {
+              throw new Error('Key words must have a value greater than 0');
+            }
           }
         }
       },

@@ -1,6 +1,6 @@
 # Questions CLI
 
-CLI Questions, is a CLI made to communicate with a API Questions. 
+Questions CLI , is a CLI made to communicate with a API Questions. 
 Project for the college subject, Software Engineering.
 
 ### Installation

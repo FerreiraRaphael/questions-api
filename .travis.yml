@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-  - 8.4.0
+- 8.4.0
 services:
-  - postgresql
+- postgresql
 before_script:
-  - mv config/config.example.js config/config.js
-  - npm run sequelize -- --env test db:create
-  - npm run sequelize -- --env test db:migrate
+- mv config/config.example.js config/config.js
+- npm run sequelize -- --env test db:create
+- npm run sequelize -- --env test db:migrate
 deploy:
   app:
     master: api-questions
   provider: heroku
   api_key:
-    secure: gzlHL3qsD0LYHOMJTOQGoB+2oJCBcA0/iBO1ywY9EAeD3Y2ZPK7CfAphqCX4vYXaJ6Oh0boXPFYUcIdk/2KV4YR7TSi6fpfaL5FFCWp3B9NuUxcAP5Fephfd+P0eIIj72azcGUDsHvaD12xN+MDZrRcRAUk1uNz+VOt+q88zBzEit+0/OG3BBAFDTGf1wwpYSLlFt2pvX6BuVLsgKwmzwE0FrX6phFCAUggNkwvb0vNcqqVEQVX3NRfBxLW+HrKJIHF0LuzjbZhQo72jPu9HLoAn2oyYmdlwd9oytcAUve1wH6e2DTzW/fjNXRH17KO8iU7eHRyBK7qaaQ9+wMZf8gQhWoEwcw0PECL+xALCG/2Znh4dU4LxthI3KwgleEizcoEjwVP/6sXiHilmsLialjcrXaxdPQ1SE6bqCEBwdfpQurk/ot6USG6qj0u+5uonJGu/95k8jGb5cjfY7lcOII/u2Ir1iLzrd3EmSdJkmkeOAGZVzlr8b8gR5S6Q6XHa7osZxpZyCEktbqmS3bLbTAh5VpHafrs+wpevngf1fIoCvJJQqv3WJk5swnHjOKox+7HEGAyoGOoGzyR16v4YMUMPM3WqVFiCUFTWEgKkKXKcNJxYFPHgPEAOYCQ6LmqcwSGvcMo7/app7y3x71C7Tk2dmna5aKKj2arBl18QBIQ=
+    secure: DYbSsEcFvwhO2JEoAIUwF1djYmN6TRSRFn4juWSOVwDhlGuLDH77mfX3idBS5fCeITzUVjN3yc/l3uTvyXsSblcIDK1xE36OXDiD8g2XKERPd8wnQgcssmEZr9wllOGzSXqO8ZVehhJhcxYHgjOqB6ftd61CgKddtq67NE4iC4agFJ9Z6fB0I2vT1RlSej1vxoFEfHcpDUKXHfR/hXftsAxmRCmc3lWfSRfO1YnZrbwf2rANuHd0lNf9dxNrETEAl9NBHRbdFjktMgCL6h3+tNvSvy6Kqq1A9LOgQEKXhJZg+q6rp7NzeWvQYPwtnqktWVDJptqwFN7Jua1Hl5cbPDYCNnI++rOUXNPdIoFguWKRpLe4caDK58vfDDsm+8QMuHzqN0j6yhVREPScEJrJOZfneJU7j0RfaI29kYhSDIk4w5QAeQ5ymLnDJVbuQxBI4Qnvy56qKWeIzmEjWrEtjAbMq53eoRK4fsaj1/S8D47QRvvPS2LX+pLyP6Z8KIV+N+b8+D+H2D6rF/usd8OsWq8Wo0XPPLsMOija99Mz3PgtZMs2ZAfegf3mf/t9a+yHsRLPoIH3a/0F7R+WEM4KA/a7bqpCxM0OXwe14uJ5dZ0dwt98cKac6ZtwOlwvNs1GTjdN0agJdCm2LAHfFwAlGvJ8BQw76uHrveo9c0KuEDY=

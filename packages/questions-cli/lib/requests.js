@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const ora = require('ora');
 
 const API_URL =
-  process.env.QUESTIONS_CLI_API_URL || 'https://questions.herokuapp.com';
+  process.env.QUESTIONS_CLI_API_URL || 'https://api-questions.herokuapp.com';
 
 /**
  * Creates a dissertative question.

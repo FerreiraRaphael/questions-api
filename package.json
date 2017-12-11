@@ -8,7 +8,8 @@
     "test": "cross-env NODE_ENV=test mocha routes/*.spec.js",
     "test:debug": "npm run test -- --inspect-brk",
     "lint": "eslint **/*.js",
-    "sequelize": "sequelize"
+    "sequelize": "sequelize",
+    "migrate": "sequelize db:migrate"
   },
   "dependencies": {
     "bcrypt": "^1.0.3",

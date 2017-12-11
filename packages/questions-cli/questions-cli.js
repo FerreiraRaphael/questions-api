@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const program = require('commander');
 const chalk = require('chalk');
 const { prompt } = require('inquirer');
@@ -16,7 +18,7 @@ const { transformUserUpdateAnswer } = require('./lib/helpers');
 const { createPrompts, updatePrompts } = require('./lib/prompts');
 
 program
-  .version('1.0.0')
+  .version('1.0.3')
   .description('A CLI to communicate with the Questions API');
 
 program
@@ -42,7 +44,7 @@ program
   });
 
 program
-  .command('get')
+  .command('get <id>')
   .alias('g')
   .description("Fetchs a question by it's ID")
   .action(async id => {
@@ -72,9 +74,9 @@ program
   });
 
 program
-  .command('update')
+  .command('update <id>')
   .alias('u')
-  .description('Creates a question')
+  .description('Updates the question with the given ID')
   .action(async id => {
     // Id not insert
     if (id.commands) {
@@ -89,9 +91,9 @@ program
   });
 
 program
-  .command('delete')
+  .command('delete <id>')
   .alias('d')
-  .description('Creates a question')
+  .description('Deletes the question with the given ID')
   .action(async id => {
     if (id.commands) {
       console.info(chalk.yellow('Please, insert a Id'));

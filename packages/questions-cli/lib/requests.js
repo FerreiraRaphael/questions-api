@@ -2,13 +2,17 @@ const axios = require('axios');
 const chalk = require('chalk');
 const ora = require('ora');
 
-const DEFAULT_API_URL =
-  process.env.NODE_ENV !== 'production'
-    ? 'http://localhost:3001'
-    : 'https://questions.herokuapp.com';
+const API_URL =
+  process.env.QUESTIONS_CLI_API_URL || 'https://questions.herokuapp.com';
 
-const API_URL = process.env.QUESTIONS_CLI_API_URL || DEFAULT_API_URL;
-
+/**
+ * Creates a dissertative question.
+ * @function createDissertativeQuestion
+ * @param  {string} description Question Description
+ * @param  {string} type Question Type
+ * @param  {object} keyWords Question Key words Object
+ * @return {object} Axios response
+ */
 async function createDissertativeQuestion({ description, type, keyWords }) {
   const spinner = ora('Creating Dissertative Question.').start();
   try {
@@ -28,6 +32,14 @@ async function createDissertativeQuestion({ description, type, keyWords }) {
   }
 }
 
+/**
+ * Creates a objective Question.
+ * @function createObjectiveQuestion
+ * @param  {string} description Question Description
+ * @param  {string} type Question Type
+ * @param  {object} alternatives Question Alternatives Object
+ * @return {object} Axios response
+ */
 async function createObjectiveQuestion({ description, type, alternatives }) {
   const spinner = ora('Creating Objective Question.').start();
   try {
@@ -47,6 +59,12 @@ async function createObjectiveQuestion({ description, type, alternatives }) {
   }
 }
 
+/**
+ * Fetchs all question by the given Type, or all questions if Type is not given.
+ * @function fetchQuestions
+ * @param  {string} type Question Type
+ * @return {object} Axios response
+ */
 async function fetchQuestions(type) {
   const spinner = ora('Fetching Questions.').start();
   try {
@@ -64,6 +82,12 @@ async function fetchQuestions(type) {
   }
 }
 
+/**
+ * Fetch a Question by the given ID.
+ * @function fetchQuestion
+ * @param  {string} id Question ID.
+ * @return {object} Axios response
+ */
 async function fetchQuestion(id) {
   const spinner = ora(`Fetching Question ${id}.`).start();
   try {
@@ -79,6 +103,13 @@ async function fetchQuestion(id) {
   }
 }
 
+/**
+ * Update a Question by the given ID and fields to update.
+ * @function updateQuestion
+ * @param {string} id Question ID.
+ * @param {object} fields Fields to update.
+ * @return {object} Axios response
+ */
 async function updateQuestion(id, fields) {
   const spinner = ora(`Updating Question ${id}.`).start();
   try {
@@ -97,6 +128,12 @@ async function updateQuestion(id, fields) {
   }
 }
 
+/**
+ * Delete a Question by the given ID.
+ * @function deleteQuestion
+ * @param {string} id Question ID.
+ * @return {object} Axios response
+ */
 async function deleteQuestion(id) {
   const spinner = ora(`Deleting Question ${id}.`).start();
   try {

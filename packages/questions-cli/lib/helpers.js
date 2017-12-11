@@ -1,3 +1,17 @@
+/**
+ * @typedef {Object} QuestionUpdateAnswerObject
+ * @property {string} description Question description
+ * @property {object} alternatives Question alternatives
+ * @property {object} keyWords Question key words
+ * @property {object} fields Selected fields for update
+ */
+
+/**
+ * @function transformUserUpdateAnswer
+ * @param  {QuestionUpdateAnswerObject} answers Object of user answers at Update Question Function
+ * @return {{description: string, type: string, keyWords: object, alternatives: object}}
+ * Question Update object for the API
+ */
 function transformUserUpdateAnswer(answers) {
   const { keyWords, description, alternatives, fields } = answers;
 

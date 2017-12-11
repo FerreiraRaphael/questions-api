@@ -1,3 +1,7 @@
+/**
+ * @function createPrompts
+ * @return {Object[]} Array of prompt questions for the create function.
+ */
 function createPrompts() {
   return [
     {
@@ -86,6 +90,11 @@ function createPrompts() {
   ];
 }
 
+/**
+ * @function updatePrompts
+ * @param  {Object} question Question object that came from the API.
+ * @return {Object[]} Array of prompt questions for the update function.
+ */
 function updatePrompts(question) {
   return [
     {

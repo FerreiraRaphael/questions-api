@@ -76,6 +76,33 @@ router
 
 router
   .route('/:QuestionId')
+  .get(
+    /**
+     * GET /api/v1/question
+     * Fetch a question.
+     * @function fetchQuestion
+     * @param {Request} req Express Request.
+     * @param {string} req.params.QuestionId Question ID.
+     * @param {Response} res Express Response.
+     */
+    async (req, res) => {
+      try {
+        const question = await Question.find({
+          where: { id: req.params.QuestionId }
+        });
+        withApiResponse({
+          description: `Question ${question.id} fetched`,
+          body: question
+        })(res);
+      } catch (error) {
+        withApiError({
+          description: `Error while fetching Question: ${error.message}`,
+          error,
+          code: 'routes.question.fetchQuestion'
+        })(res);
+      }
+    }
+  )
   .put(
     /**
      * PUT /api/v1/question/:QuestionId
@@ -128,7 +155,9 @@ router
           returning: true
         });
         withApiResponse({
-          description: `The question with ID ${req.params.QuestionId} was deleted`,
+          description: `The question with ID ${
+            req.params.QuestionId
+          } was deleted`,
           body: result
         })(res);
       } catch (error) {

@@ -287,4 +287,21 @@ describe('Route /question', () => {
       expect(await Question.count()).to.be(0);
     });
   });
+
+  describe('GET /question/:QuestionId', () => {
+    let dissertativeQuestion;
+    beforeEach(async () => {
+      dissertativeQuestion = await Question.create(dataDissertative);
+    });
+
+    it('fetches a question with the given ID', async () => {
+      const response = await request(app)
+        .get(`/api/v1/question/${dissertativeQuestion.id}`)
+        .set('Accept', /application\/json/)
+        .send()
+        .expect(httpStatus.OK);
+      const { body } = await response.body;
+      expect(body.id).to.be(dissertativeQuestion.id);
+    });
+  });
 });

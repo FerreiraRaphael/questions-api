@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+- 8.4.0
+deploy:
+  app:
+    master: api-questions
+  provider: heroku
+  api_key:
+    secure: gzlHL3qsD0LYHOMJTOQGoB+2oJCBcA0/iBO1ywY9EAeD3Y2ZPK7CfAphqCX4vYXaJ6Oh0boXPFYUcIdk/2KV4YR7TSi6fpfaL5FFCWp3B9NuUxcAP5Fephfd+P0eIIj72azcGUDsHvaD12xN+MDZrRcRAUk1uNz+VOt+q88zBzEit+0/OG3BBAFDTGf1wwpYSLlFt2pvX6BuVLsgKwmzwE0FrX6phFCAUggNkwvb0vNcqqVEQVX3NRfBxLW+HrKJIHF0LuzjbZhQo72jPu9HLoAn2oyYmdlwd9oytcAUve1wH6e2DTzW/fjNXRH17KO8iU7eHRyBK7qaaQ9+wMZf8gQhWoEwcw0PECL+xALCG/2Znh4dU4LxthI3KwgleEizcoEjwVP/6sXiHilmsLialjcrXaxdPQ1SE6bqCEBwdfpQurk/ot6USG6qj0u+5uonJGu/95k8jGb5cjfY7lcOII/u2Ir1iLzrd3EmSdJkmkeOAGZVzlr8b8gR5S6Q6XHa7osZxpZyCEktbqmS3bLbTAh5VpHafrs+wpevngf1fIoCvJJQqv3WJk5swnHjOKox+7HEGAyoGOoGzyR16v4YMUMPM3WqVFiCUFTWEgKkKXKcNJxYFPHgPEAOYCQ6LmqcwSGvcMo7/app7y3x71C7Tk2dmna5aKKj2arBl18QBIQ=

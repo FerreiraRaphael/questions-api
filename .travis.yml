@@ -1,6 +1,12 @@
 language: node_js
 node_js:
-- 8.4.0
+  - 8.4.0
+services:
+  - postgresql
+before_script:
+  - mv config/config.example.js config/config.js
+  - npm run sequelize -- --env test db:create
+  - npm run sequelize -- --env test db:migrate
 deploy:
   app:
     master: api-questions

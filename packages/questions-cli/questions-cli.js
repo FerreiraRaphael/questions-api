@@ -18,7 +18,7 @@ const { transformUserUpdateAnswer } = require('./lib/helpers');
 const { createPrompts, updatePrompts } = require('./lib/prompts');
 
 program
-  .version('1.0.3')
+  .version('1.0.4')
   .description('A CLI to communicate with the Questions API');
 
 program
